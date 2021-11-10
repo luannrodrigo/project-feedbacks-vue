@@ -1,0 +1,46 @@
+<template>
+  <teleport to="body">
+    <div
+      v-if="state.isActive"
+      class="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50"
+      @click="ModalToogle({ status: false })"
+    >
+      <div class="fixed mx-10">
+        <div class="flex flex-col overflow-hidden bg-white rounded-lg animete__animarted animate__fadeInDown animate__falster">
+          <div class="flex flex-col px-12 py-10 bg-white">
+            <component :is="state.content"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </teleport>
+</template>
+
+<script>
+import { reactive } from 'vue';
+
+const DEFAULT_WIDTH = 'w-3/4 lg:w-1/3';
+
+export default {
+  setup() {
+    const state = reactive({
+      isActive: false,
+      content: {},
+      props: {},
+      with: DEFAULT_WIDTH,
+    });
+
+    function ModalToogle({ status }) {
+
+    }
+
+    return {
+      state,
+    };
+  },
+};
+</script>
+
+<style>
+
+</style>
