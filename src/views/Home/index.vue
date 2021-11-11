@@ -15,6 +15,7 @@ import { useRouter } from 'vue-router';
 
 import Header from '../../components/Header';
 import Contact from '../../components/Contact';
+import useModal from '../../hooks/useModal';
 
 export default {
   components: {
@@ -24,6 +25,7 @@ export default {
 
   setup() {
     const router = useRouter();
+    const modal = useModal();
 
     onMounted(() => {
       const token = window.localStorage.getItem('token');
@@ -34,7 +36,9 @@ export default {
       }
     });
     function Login() {
-
+      modal.open({
+        component: 'ModalLogin',
+      });
     }
 
     function AccountCreate() {
