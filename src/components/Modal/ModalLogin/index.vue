@@ -68,22 +68,33 @@
 
 <script>
 import { reactive } from 'vue';
+import { useField } from 'vee-validate';
 import useModal from '../../../hooks/useModal';
+import { validateEmpytAndLength, validateEmpytAndEmail } from '../../../utils/validate';
 
 export default {
   setup() {
     const modal = useModal();
+    const {
+      value: emailValue,
+      errorMessage: emailErrorMessage,
+    } = useField('email', validateEmpytAndEmail);
+
+    const {
+      value: passwordValue,
+      errorMessage: passwordErrorMessage,
+    } = useField('password', validateEmpytAndLength);
 
     const state = reactive({
       hasError: false,
       isLoading: false,
       email: {
-        value: '',
-        error: '',
+        value: emailValue,
+        error: emailErrorMessage,
       },
       password: {
-        value: '',
-        error: '',
+        value: passwordValue,
+        error: passwordErrorMessage,
       },
     });
 
@@ -94,6 +105,7 @@ export default {
     return {
       state,
       close: modal.close,
+      submit,
     };
   },
 };
