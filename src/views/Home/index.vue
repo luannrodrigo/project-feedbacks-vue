@@ -28,7 +28,7 @@ export default {
     const modal = useModal();
 
     onMounted(() => {
-      const token = window.localStorage.getItem('token');
+      const token = window.localStorage.getItem('@feedbacker:token');
 
       if (token) {
         // this.$router.push('/dashboard');
