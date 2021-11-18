@@ -1,5 +1,6 @@
 import axios from 'axios';
 import AuthService from './auth';
+import UsersService from './users';
 import router from '../router';
 
 const API_ENVS = {
@@ -37,4 +38,5 @@ httpClient.interceptors.response.use((response) => response, (error) => {
 
 export default {
   auth: AuthService(httpClient),
+  users: UsersService(httpClient),
 };
