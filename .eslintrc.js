@@ -14,6 +14,7 @@ module.exports = {
     'max-len': "off",
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-param-reassign': 'off',
     "import/extensions": ["error", "always", {
       "js" : "never",
       "mjs": "never",
