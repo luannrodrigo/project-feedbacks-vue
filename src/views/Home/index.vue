@@ -1,6 +1,6 @@
 <template>
   <Header
-    @create-account="AccountCreate"
+    @singup="SingUp"
     @login="Login"
   />
   <Contact />
@@ -41,13 +41,15 @@ export default {
       });
     }
 
-    function AccountCreate() {
-
+    function SingUp() {
+      modal.open({
+        component: 'ModalAccount',
+      });
     }
 
     return {
       Login,
-      AccountCreate,
+      SingUp,
     };
   },
 

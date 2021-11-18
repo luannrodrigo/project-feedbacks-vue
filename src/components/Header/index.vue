@@ -10,7 +10,10 @@
 
         <div class="flex">
 
-          <button class="px-6 py-2 font-bold rounded-full text-white focus:outline-none">
+          <button
+            @click="() => emit('singup')"
+            class="px-6 py-2 font-bold rounded-full text-white focus:outline-none"
+          >
             SignUp
           </button>
 
