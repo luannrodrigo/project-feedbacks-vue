@@ -7,6 +7,7 @@
 import { watch } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import Modal from './components/Modal';
+import { setCurrentUser } from './store/user';
 
 import services from './services';
 
@@ -27,7 +28,7 @@ export default {
         }
 
         const { data } = await services.users.getMe();
-        console.log({ data });
+        setCurrentUser(data);
       }
       return true;
     });
