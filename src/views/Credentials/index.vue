@@ -20,7 +20,7 @@
           This is your api key
         </p>
 
-        <div class="flex py-3 pl-5 pr-20 mt-2 rounded items-center bg-brand-gray">
+        <div class="flex items-center py-3 pl-5 pr-20 mt-2 rounded bg-brand-gray">
           <span>{{ store.User.currentUser.apiKey }}</span>
           <div class="flex ml-20 mr-5">
             <icon
@@ -30,7 +30,7 @@
               class="cursor-pointer"
             />
           </div>
-        </div>
+        </div>t
 
         <p class="mt-10 text-lg text-gray-800 font-regular">
           Set script bellow to use Feedbacks
